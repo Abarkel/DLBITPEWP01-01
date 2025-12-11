@@ -1,0 +1,300 @@
+/* ------------------------------
+   Farbpalette (leicht anpassbar)
+---------------------------------*/
+:root {
+    --bg-grad-1: #fdf2ff;        /* helles Rosa/Lila */
+    --bg-grad-2: #ffe4f4;
+    --color-header: #15132b;     /* dunkles Lila */
+    --color-text-main: #1f2937;
+    --color-text-muted: #6b7280;
+    --color-accent: #ff66c4;     /* pink Anime-Akzent */
+    --color-accent-dark: #ff3b9a;
+    --color-card-bg: #ffffff;
+    --color-link: #8b5cf6;       /* lila Links */
+    --color-link-hover: #4c1d95;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+/* Body + Sticky Footer */
+body {
+    font-family: "Nunito", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    background: radial-gradient(circle at top left, #fff7ff 0, var(--bg-grad-1) 35%, var(--bg-grad-2) 100%);
+    margin: 0;
+    color: var(--color-text-main);
+
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* Zentrierter Haupt-Container */
+main.container {
+    max-width: 900px;
+    margin: 50px auto 40px auto;
+    padding: 0 20px;
+    width: 100%;
+    flex: 1; /* drückt Footer nach unten */
+}
+/* ------------------------------
+   Header & Navigation
+---------------------------------*/
+header {
+    background: linear-gradient(90deg, #15132b, #231f4a);
+    color: #fff;
+    padding: 12px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 26px;
+    font-family: "Mochiy Pop One", system-ui, sans-serif;
+    letter-spacing: 0.5px;
+}
+
+/* globale Links (in Texten) */
+a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+a:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+}
+
+/* NAV */
+nav {
+    margin-top: 6px;
+    font-size: 14px;
+}
+
+nav a,
+nav span {
+    color: #f9fafb;
+    text-decoration: none;
+    margin-right: 10px;
+}
+/* Navigation Links */
+nav a {
+    padding: 4px 12px;
+    border-radius: 999px;
+    transition: background-color 0.2s, color 0.2s, transform 0.1s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 102, 196, 0.25);
+    color: #f9fafb;
+    transform: translateY(-1px);
+}
+
+#B_Name {
+    color: #ff9ad5;
+    margin-right: 10px;
+    font-family: "Mochiy Pop One", system-ui, sans-serif;
+}
+/* aktive Seite in der Navigation */
+.nav-aktiv {
+    background: linear-gradient(135deg, #ff9ad5, #ff66c4);
+    color: #1f2937 !important;
+    border-radius: 999px;
+    padding: 4px 12px;
+     font-family: "Mochiy Pop One", system-ui, sans-serif;
+}
+
+/* Dünne Linie unter Header */
+hr {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 0;
+}
+
+/* ------------------------------
+   Seiten-Boxen & Listen
+---------------------------------*/
+/* große Box in der Mitte */
+.page-box {
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(6px);
+    padding: 24px 28px;
+    border-radius: 18px;
+    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.18);
+}
+
+/* Überschriften */
+h2,
+h3,
+h4 {
+    margin-top: 0;
+    color: var(--color-header);
+     font-family: "Mochiy Pop One", system-ui, sans-serif;
+}
+
+/* Listen */
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 12px;
+}
+
+/* Kategorie-/Themenkarten */
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 10px 16px;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.08);
+    border: 1px solid rgba(248, 187, 247, 0.7);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.18);
+    border-color: #ff66c4;
+}
+
+.card small {
+    color: var(--color-text-muted);
+}
+
+/* Beiträge */
+.beitrag-box {
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    background: #fff7fd;
+    border: 1px solid #fec6ff;
+}
+
+.beitrag-box small {
+    color: var(--color-text-muted);
+}
+
+/* Formulare */
+label {
+    font-weight: 600;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"],
+textarea {
+    width: 50%;
+    padding: 8px 10px;
+    margin-top: 4px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    border: 1px solid black;
+    font: inherit;
+    background-color: #fdf2ff;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+
+input:focus,
+textarea:focus {
+    outline: none;
+    border-color: #f472b6;
+    box-shadow: 0 0 0 2px rgba(244, 114, 182, 0.4);
+}
+
+/* Buttons */
+button,
+.button-link {
+    display: inline-block;
+    padding: 7px 16px;
+    border-radius: 999px;
+    border: none;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-dark));
+    color: #fff;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 14px;
+    box-shadow: 0 4px 10px rgba(236, 72, 153, 0.4);
+}
+
+button:hover,
+.button-link:hover {
+    filter: brightness(1.05);
+    transform: translateY(-1px);
+}
+/* ------------------------------
+   Meldungen
+---------------------------------*/
+
+.msg-info {
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    padding: 8px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.msg-error {
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    padding: 8px 10px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+/*------------------------------
+   Responsive Design    
+---------------------------------*/
+@media (max-width: 600px) {
+    main.container {
+        margin: 20px auto;
+        padding: 0 12px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="date"],
+    textarea {
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+/* ------------------------------
+   Footer
+---------------------------------*/
+
+.footer {
+    background-color: var(--color-header);
+    color: #f9fafb;
+    padding: 12px 0;
+    font-size: 13px;
+    font-family: "Mochiy Pop One", system-ui, sans-serif;
+}
+
+.footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+}
+
